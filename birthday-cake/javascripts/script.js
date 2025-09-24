@@ -7,6 +7,7 @@ let mediaStream;
 let flameCount = 3;
 let flamesBlownOut = 0;
 let microphoneStopped = false; // track microphone status
+let confettiInterval = null; // track confetti animation interval
 const bdMsgEl = document.getElementById("bdMsg");
 
 /* ========= Helpers cho flame ========= */
@@ -101,6 +102,9 @@ function setupAudio() {
                 cheeraudio.play();
                 hbdaudio.play();
 
+                document.getElementById("resetBtn").style.display = "flex";
+                document.getElementById("next-to-card").style.display = "flex";
+
                 stopMicrophone();
 
                 confetti({
@@ -166,6 +170,11 @@ document.getElementById("micAccessBtn").addEventListener("click", function () {
   document.getElementById("micAccessBtn").style.display = "none";
   document.getElementById("mainContainer").style.opacity = 1;
   updateAmbient();
+});
+
+/* ========= Reset functionality ========= */
+document.getElementById("resetBtn").addEventListener("click", function () {
+  window.location.reload();
 });
 
 /* ========= Bóng bay ========= */

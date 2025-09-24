@@ -64,6 +64,81 @@ main {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
+
+#resetBtn {
+  width: 40px;
+  height: 40px;
+  background: rgb(208, 103, 103);
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#resetBtn:hover {
+  background: rgb(180, 80, 80);
+}
+
+.next-to-card {
+  width: 50px;
+  height: 50px;
+  background: rgb(103, 208, 103);
+  border-radius: 25px;
+  padding: 0;
+  border: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.next-to-card:hover {
+  width: 200px;
+  background: rgb(80, 180, 80);
+  border-radius: 25px;
+}
+
+.next-to-card .icon {
+  font-size: 20px;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.next-to-card .text {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  padding-right: 15px;
+}
+
+.next-to-card:hover .text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .cake {
   animation: fadeUp 1s ease;
 }
