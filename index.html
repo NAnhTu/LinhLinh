@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm ngày yêu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script> -->
+</head>
+
+<body onclick="playAudio()">
+    <canvas id="c" width="948" height="586"></canvas>
+    
+    <!-- Mute button always on top right -->
+    <button id="mute-btn" class="mute-button" style="display: none;">🔊</button>
+    
+    <div id="wrapper">
+        <h1>Đếm ngày yêu</h1>
+
+        <div id="info">
+            <div class="one">
+                <img src="assets/images/linhlinh1.jpg" class="avt">
+                <p>Tun Tun</p>
+            </div>
+            <div id="heart">
+                ❤
+                <date>0</date>
+                <b>Ngày rùi nè..</b>
+            </div>
+            <div class="two">
+                <img src="assets/images/tuntun.jpg"
+                    class="avt">
+                <p>Bé Yêu 🌸</p>
+            </div>
+        </div>
+
+        <div id="clock-box">
+            <div id="clock">
+                <div class="time-container">
+                    <div class="time-part" id="hours">00</div>:
+                    <div class="time-part" id="minutes">00</div>:
+                    <div class="time-part" id="seconds">00</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="" id="next-page" target="_blank" style="display: none;">
+            <button></button>
+        </a>
+
+        <audio id="myAudio">
+            <source src="assets/audios/ST.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+
+    </div>
+    <script src="javascripts/script.js"></script>
+</body>
+
+</html>

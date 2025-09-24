@@ -1,0 +1,304 @@
+@font-face {
+  font-family: birthday;
+  src: url("../assets/fonts/Brusher.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  overflow: hidden;
+}
+
+/* ===== NỀN SÁNG/TỐI THEO TRẠNG THÁI NẾN ===== */
+body {
+  transition: background 400ms ease, filter 400ms ease;
+  /* nền tối mặc định nếu thiếu class */
+  background: #0b0610;
+}
+body.bright {
+  /* có nến => sáng, thêm halo nhẹ */
+  background: radial-gradient(
+      1200px 600px at 50% 20%,
+      rgba(255, 230, 170, 0.25),
+      transparent 60%
+    ),
+    #2a1230;
+  filter: brightness(1);
+}
+body.dark {
+  /* hết nến => tối hẳn */
+  background: #0b0610;
+  filter: brightness(0.7);
+}
+
+#bdMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e77f28;
+  min-height: 200px;
+  padding-top: 1rem;
+  font-size: 5rem;
+  text-align: center;
+  letter-spacing: 0.25rem;
+  animation: fadeDown 1s ease, changecolor 5s ease alternate infinite;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70dvh;
+}
+#micAccessBtn {
+  background: rgb(103, 103, 208);
+  color: white;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.cake {
+  animation: fadeUp 1s ease;
+}
+
+#flame1 {
+  animation: shake 400ms ease infinite, glowUp 2s ease;
+}
+
+#flame2 {
+  animation: shake 800ms ease alternate infinite, glowUp 2s ease;
+}
+
+#flame3 {
+  animation: shake 1s ease alternate infinite, glowUp 2s ease;
+}
+
+.makeBtn {
+  color: black;
+  border: 2px solid #e77f28;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  animation: changecolor 5s ease alternate infinite;
+  text-decoration: none;
+}
+
+@keyframes shake {
+  20% {
+    opacity: 90%;
+  }
+
+  50% {
+    transform: skew(0.5deg);
+    opacity: 100%;
+  }
+
+  80% {
+    opacity: 90%;
+  }
+
+  100% {
+    transform: skew(-0.5deg);
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes glowUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #bdMsg {
+    font-size: 3rem;
+  }
+}
+
+#balloon-container {
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #fdfd96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+  content: "▲";
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#nameText {
+  font-family: birthday;
+}
+
+.changeColor {
+  animation: changecolor 10s ease alternate infinite;
+}
+
+@keyframes changecolor {
+  100% {
+    filter: hue-rotate(-90deg);
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
+
+/* ===== QUE DIÊM THEO CHUỘT ===== */
+#matchstick {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%) rotate(35deg);
+  display: none; /* bật/tắt bằng JS */
+  pointer-events: none; /* không chặn click */
+  z-index: 9999;
+}
+#matchstick .stick {
+  position: absolute;
+  left: 36px;
+  top: 15px;
+  width: 8px;
+  height: 60px;
+  background: linear-gradient(#8d5a2b, #633b18);
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+#matchstick .head {
+  position: absolute;
+  left: 31px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: #4c2a14;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+/* ngọn lửa nhỏ xuất hiện khi đang giữ chuột */
+#matchstick .flame {
+  position: absolute;
+  left: 26px;
+  top: -2px;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 210, 0, 0.9),
+    rgba(255, 120, 0, 0.7),
+    rgba(255, 120, 0, 0)
+  );
+  border-radius: 50% 50% 60% 60%;
+  transform: rotate(-20deg);
+  filter: blur(0.3px) drop-shadow(0 0 6px rgba(255, 200, 0, 0.9));
+  opacity: 0; /* ẩn mặc định */
+  transition: opacity 120ms linear;
+  animation: matchFlicker 300ms infinite alternate ease-in-out;
+}
+#matchstick.lit .flame {
+  opacity: 1;
+}
+@keyframes matchFlicker {
+  from {
+    transform: rotate(-24deg) scale(0.95);
+  }
+  to {
+    transform: rotate(-16deg) scale(1.05);
+  }
+}
+
+/* flame vẫn “bắt” được hover/click kể cả khi tắt */
+#flame1,
+#flame2,
+#flame3 {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* “Tắt” nến = chỉ ẩn thị giác, không remove khỏi flow sự kiện */
+.flame-off {
+  opacity: 0 !important;
+  transition: opacity 150ms ease;
+  /* vẫn bắt sự kiện khi opacity=0 */
+  pointer-events: auto;
+}
