@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -13,6 +14,7 @@ body {
 body {
   transition: background 400ms ease, filter 400ms ease;
   background: #0b0610;
+  font-family: "Indie Flower", cursive;
 }
 body.bright {
   background: radial-gradient(
@@ -22,6 +24,32 @@ body.bright {
     ),
     #2a1230;
   /* filter: brightness(1); */
+}
+
+/* Top-left Home link styled like resetBtn */
+.home-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  background: rgb(208, 103, 103);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+  background: rgb(180, 80, 80);
 }
 body.dark {
   background: #0b0610;
@@ -101,18 +129,32 @@ body.dark {
 p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  font-family: "Indie Flower", cursive;
 }
 
 p:first-child {
   margin-top: 0;
 }
 
+p.title,
 p.signed {
-  margin-top: 1em;
+  font-size: 1.2em;
   text-align: center;
   font-family: "Indie Flower", cursive;
-  font-size: 1.5em;
+}
+
+p.title {
+  font-weight: bold;
+}
+
+p.signed {
+  margin-top: 1em;
+}
+
+.content {
+  font-size: 16px;
+  font-family: "Indie Flower", cursive;
+  white-space: pre-line;
+  line-height:1.4;
 }
 
 #card-front {
@@ -517,10 +559,6 @@ footer {
   p {
     font-size: 22px;
   }
-  p.title,
-  p.signed {
-    font-size: 30px;
-  }
 
   /* Nút mở/đóng dễ bấm hơn, giữ trong màn hình */
   #card-front button {
@@ -590,6 +628,66 @@ footer {
   #cake {
     width: 86vw !important;
   }
+}
+
+/* Formality Toggle Button */
+.formality-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #8b5a3c, #a67c5a);
+  border: 2px solid #d4af37;
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.formality-toggle:hover {
+  background: linear-gradient(135deg, #a67c5a, #c19660);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.formality-toggle.active {
+  background: linear-gradient(135deg, #d4af37, #f4d03f);
+  color: #8b4513;
+  border-color: #ffd700;
+}
+
+.formality-toggle .toggle-icon {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.formality-toggle.active .toggle-icon {
+  transform: scale(1.2);
+}
+
+/* Royal mode styling for content */
+body.royal-mode .content {
+  font-family: 'EB Garamond', serif !important;
+  font-style: italic;
+  line-height: 1.5 !important;
+  text-align: justify;
+  font-size: 14px;
+}
+
+body.royal-mode .title,
+body.royal-mode .signed {
+  font-family: 'EB Garamond', serif !important;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
 /* Hỗ trợ người dùng giảm chuyển động */
