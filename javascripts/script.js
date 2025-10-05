@@ -203,19 +203,19 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.style.display = "";
   }
   if (thisMonth === 4 && thisDate === 13) {
-    nextPage.href = "/galaxy/index.html";
+    nextPage.href = "galaxy/index.html";
     nextPageBtn.textContent = "Happy Anniversary 🌌";
   }
   if (thisMonth === 9 && thisDate === 17) {
-    nextPage.href = "/birthday-cake/index.html";
+    nextPage.href = "birthday-cake/index.html";
     nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
   }
   if (thisMonth === 10 && thisDate === 25) {
-    nextPage.href = "/birthday-cake/index.html";
+    nextPage.href = "birthday-cake/index.html";
     nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
   }
   if (thisMonth === 10 && thisDate === 6) {
-    nextPage.href = "/mid-autumn-festival/index.html";
+    nextPage.href = "mid-autumn-festival/index.html";
     nextPageBtn.textContent = "Trung Thu ròiiii 🌕";
   }
 });
