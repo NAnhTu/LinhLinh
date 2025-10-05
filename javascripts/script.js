@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { month: 10, date: 20 }, // Vietnam Women's Day
     { month: 3, date: 8 }, // International Women's Day
     { month: 9, date: 24 }, // today
+    { month: 10, date: 6 }, // today
   ];
   const isSpecialDate = specialDates.some(
     (d) => d.month === thisMonth && d.date === thisDate
@@ -201,9 +202,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (isSpecialDate) {
     nextPage.style.display = "";
   }
-  if (thisMonth === 9 && thisDate === 24) {
+  if (thisMonth === 4 && thisDate === 13) {
+    nextPage.href = "/galaxy/index.html";
+    nextPageBtn.textContent = "Happy Anniversary 🌌";
+  }
+  if (thisMonth === 9 && thisDate === 17) {
     nextPage.href = "/birthday-cake/index.html";
     nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
+  }
+  if (thisMonth === 10 && thisDate === 25) {
+    nextPage.href = "/birthday-cake/index.html";
+    nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
+  }
+  if (thisMonth === 10 && thisDate === 6) {
+    nextPage.href = "/mid-autumn-festival/index.html";
+    nextPageBtn.textContent = "Trung Thu ròiiii 🌕";
   }
 });
 
