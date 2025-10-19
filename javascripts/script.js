@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { month: 10, date: 25 }, // Birthday
     { month: 9, date: 17 }, // Birthday
     { month: 4, date: 13 }, // Anniversary
-    { month: 10, date: 19 }, // Vietnam Women's Day
+    { month: 10, date: 20 }, // Vietnam Women's Day
     { month: 3, date: 8 }, // International Women's Day
     { month: 9, date: 24 }, // today
     { month: 10, date: 6 }, // today
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.href = "mid-autumn-festival/index.html";
     nextPageBtn.textContent = "Trung Thu ròiiii 🌕";
   }
-  if (thisMonth === 10 && thisDate === 19) {
+  if (thisMonth === 10 && thisDate === 20) {
     nextPage.href = "women-day/index.html";
     nextPageBtn.textContent = "Ngày Em Bé Yêu 🌸";
   }
