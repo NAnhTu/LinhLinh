@@ -30,7 +30,7 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  /* background-image: radial-gradient(
+  background-image: radial-gradient(
       ellipse at top,
       transparent 0%,
       var(--dark-color)
@@ -61,11 +61,11 @@ body {
       transparent 19px,
       transparent 22px
     ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240)); */
+    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
 }
 
-.happy-woman-day {
-  color: rgb(0, 0, 0);
+.happy-women-day {
+  color: rgb(255, 255, 255);
   font-size: 50px;
   position: fixed;
   top: 80px;
@@ -75,7 +75,7 @@ body {
 /* Runner GIF (flies left -> right) */
 #runner-container {
   position: fixed;
-  left: -5vw; /* start at -5% */
+  left: -10vw; /* start at -10% */
   top: 5vmin; /* moved up 2vmin */
   z-index: 30; /* below paper-front (70) but above stems (50) adjust if needed */
   pointer-events: none;
@@ -93,32 +93,7 @@ body {
 }
 
 /* Modal / card */
-.card-modal { 
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 120;
-}
-.card-modal[aria-hidden="false"] { display: flex; }
-.card-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-.card-wrapper { position: relative; width: min(90vw, 900px); height: min(70vh, 600px); display:flex; align-items:center; justify-content:center; }
-.card { position: relative; width:100%; height:100%; display:flex; box-shadow: 0 10px 40px rgba(0,0,0,0.5); background: #fff; border-radius: 12px; overflow: hidden; transform-origin: left center; animation: card-open 0.7s ease forwards; }
-.card-left, .card-right { flex:1; display:flex; align-items:center; justify-content:center; padding: 2vmin; }
-.card-left img { max-width:100%; max-height:100%; border-radius:6px; }
-.card-right { background: linear-gradient(180deg,#fff 0%,#fff4f8 100%); }
-.card-message { font-family: 'Courier New', monospace; font-size: 2.4vmin; color:#333; white-space: pre-wrap; }
-.card-close { position:absolute; right:8px; top:8px; background:transparent;border:0;color:#333;font-size:1.6rem; cursor:pointer; z-index:5; }
 
-@keyframes card-open {
-  from { transform: scaleX(0.6) translateX(-10vmin); opacity:0; }
-  to { transform: scaleX(1) translateX(0); opacity:1; }
-}
-
-/* Typewriter caret */
-.card-message.typing::after { content: '|'; margin-left:4px; animation: blink 0.8s steps(1) infinite; }
-@keyframes blink { 50% { opacity:0 } }
 
 .shooting-stars {
   position: fixed;
@@ -1097,4 +1072,196 @@ body {
 }
 .monte-der {
   margin-right: -30px;
+}
+
+/* Modal/Letter Form Block Styles */
+.wrapperLetterForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.boxLetter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxLetter .formLetter {
+  position: relative;
+  width: 600px;
+  height: 450px;
+  background-color: #FFEBEB;
+  border-radius: 20px;
+  z-index: 100;
+  padding: 20px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.formLetter .wrapperLetter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #FF6666;
+  border-radius: inherit;
+  display: flex;
+}
+
+.boxLetter .before {
+  position: absolute;
+  width: 600px;
+  height: 350px;
+  background: #fff;
+  transform: rotate(-15deg);
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.formLetter .heartLetter {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFEBEB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.heartLetter .heartLetterItem {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: #FF6666;
+}
+
+.heartLetter:first-child {
+  right: 5px;
+  top: 10px;
+}
+
+.heartLetter:nth-child(2) {
+  left: 5px;
+  bottom: 10px;
+}
+
+.heartLetterItem::before,
+.heartLetterItem::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.heartLetterItem::before {
+  top: -50%;
+}
+
+.heartLetterItem::after {
+  left: -50%;
+}
+
+.giftbox {
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+
+.giftbox .img {
+  position: absolute;
+  width: 180px;
+  bottom: 10px;
+  left: 0;
+  z-index: 100;
+}
+
+.giftbox img {
+  width: 100%;
+}
+
+.textLetter {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.textLetter h2 {
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.textLetter .contentLetter {
+  font-size: 19px;
+  text-align: center;
+  padding: 0px 30px;
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+  position: initial;
+  white-space: pre-line;
+}
+
+.fa-xmark {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 25px;
+  z-index: 101;
+}
+
+.fa-xmark:hover {
+  opacity: 0.8;
+}
+
+.heartAnimation {
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+}
+
+.heartAnimation img {
+  width: 100%;
+}
+
+.mewmew1,
+.mewmew2 {
+  position: absolute;
+  width: 90px;
+}
+
+.mewmew1 {
+  bottom: 0;
+  left: 0;
+}
+
+.mewmew2 {
+  bottom: 0;
+  right: 0;
+}
+
+.mewmew1 img,
+.mewmew2 img {
+  width: 100%;
+}
+
+/*create media mobile*/
+@media only screen and (max-width: 700px) {
+  .giftbox .img {
+    width: 130px;
+  }
 }

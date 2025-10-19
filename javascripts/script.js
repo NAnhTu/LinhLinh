@@ -218,6 +218,10 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.href = "mid-autumn-festival/index.html";
     nextPageBtn.textContent = "Trung Thu ròiiii 🌕";
   }
+  if (thisMonth === 10 && thisDate === 20) {
+    nextPage.href = "women-day/index.html";
+    nextPageBtn.textContent = "Ngày Em Bé Yêu 🌸";
+  }
 });
 
 // const developControl = document.querySelector(".js-develop-button");

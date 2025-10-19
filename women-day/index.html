@@ -9,11 +9,15 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body class="not-loaded">
 	<div class="night"></div>
-	<div class="happy-woman-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 20/10</div>
+	<div class="happy-women-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 20/10</div>
 	<div class="flowers">
 		<div class="flower flower--1">
 			<div class="flower__leafs flower__leafs--1">
@@ -324,22 +328,43 @@
 		<img id="runner-gif" src="https://media.tenor.com/YE4d6BrNbGoAAAAj/boo-dudu-run.gif" alt="runner" />
 	</div>
 
-	<!-- Modal: card that opens with image on left and typed text on right -->
-	<div id="card-modal" class="card-modal" role="dialog" aria-hidden="true">
-		<div class="card-overlay"></div>
-		<div class="card-wrapper" role="document">
-			<button class="card-close" aria-label="Close">✕</button>
-			<div class="card">
-				<div class="card-left">
-					<img id="card-image" src="https://media.tenor.com/YE4d6BrNbGoAAAAj/boo-dudu-run.gif" alt="card image" />
+	<div class="wrapperLetterForm" style="">
+		<div class="boxLetter">
+			<i class="fa-solid fa-xmark"></i>
+			<div class="formLetter">
+				<div class="heartLetter">
+					<div class="heartLetterItem"></div>
 				</div>
-				<div class="card-right">
-					<div id="card-message" class="card-message"></div>
+				<div class="heartLetter">
+					<div class="heartLetterItem"></div>
+				</div>
+
+				<div class="wrapperLetter">
+					<div class="giftbox">
+						<div class="img">
+							<img src="assets/images/giftbox.png" alt="">
+						</div>
+					</div>
+					<div class="textLetter">
+						<h2></h2>
+						<p class="contentLetter"></p>
+						<div class="heartAnimation">
+							<img src="assets/images/heartAnimation.gif" alt="">
+						</div>
+					</div>
+					<div class="mewmew1">
+						<img src="assets/images/mewmew.gif" alt="">
+					</div>
+					<div class="mewmew2">
+						<img src="assets/images/mewmew.gif" alt="">
+					</div>
 				</div>
 			</div>
+			<div class="before"></div>
 		</div>
 	</div>
 
+	<!-- <script src="javascripts/modal.js" type="module"></script> -->
 	<script src="javascripts/script.js" type="module"></script>
 </body>
 
