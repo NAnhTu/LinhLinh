@@ -72,6 +72,54 @@ body {
   text-align: center;
 }
 
+/* Runner GIF (flies left -> right) */
+#runner-container {
+  position: fixed;
+  left: -5vw; /* start at -5% */
+  top: 5vmin; /* moved up 2vmin */
+  z-index: 30; /* below paper-front (70) but above stems (50) adjust if needed */
+  pointer-events: none;
+}
+#runner-container img {
+  width: 8vmin; /* smaller */
+  height: auto;
+  display: block;
+  transform: translateX(0);
+}
+@keyframes runner-move {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  60% { transform: translateX(60vw) translateY(-4vmin) rotate(8deg); }
+  100% { transform: translateX(100vw) translateY(0) rotate(0deg); }
+}
+
+/* Modal / card */
+.card-modal { 
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+}
+.card-modal[aria-hidden="false"] { display: flex; }
+.card-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.card-wrapper { position: relative; width: min(90vw, 900px); height: min(70vh, 600px); display:flex; align-items:center; justify-content:center; }
+.card { position: relative; width:100%; height:100%; display:flex; box-shadow: 0 10px 40px rgba(0,0,0,0.5); background: #fff; border-radius: 12px; overflow: hidden; transform-origin: left center; animation: card-open 0.7s ease forwards; }
+.card-left, .card-right { flex:1; display:flex; align-items:center; justify-content:center; padding: 2vmin; }
+.card-left img { max-width:100%; max-height:100%; border-radius:6px; }
+.card-right { background: linear-gradient(180deg,#fff 0%,#fff4f8 100%); }
+.card-message { font-family: 'Courier New', monospace; font-size: 2.4vmin; color:#333; white-space: pre-wrap; }
+.card-close { position:absolute; right:8px; top:8px; background:transparent;border:0;color:#333;font-size:1.6rem; cursor:pointer; z-index:5; }
+
+@keyframes card-open {
+  from { transform: scaleX(0.6) translateX(-10vmin); opacity:0; }
+  to { transform: scaleX(1) translateX(0); opacity:1; }
+}
+
+/* Typewriter caret */
+.card-message.typing::after { content: '|'; margin-left:4px; animation: blink 0.8s steps(1) infinite; }
+@keyframes blink { 50% { opacity:0 } }
+
 .shooting-stars {
   position: fixed;
   top: 0;

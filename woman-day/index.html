@@ -318,6 +318,28 @@
 			</div>
 		</div> -->
 	</div>
+
+	<!-- floating runner GIF (starts off, added by JS) -->
+	<div id="runner-container" aria-hidden="true">
+		<img id="runner-gif" src="https://media.tenor.com/YE4d6BrNbGoAAAAj/boo-dudu-run.gif" alt="runner" />
+	</div>
+
+	<!-- Modal: card that opens with image on left and typed text on right -->
+	<div id="card-modal" class="card-modal" role="dialog" aria-hidden="true">
+		<div class="card-overlay"></div>
+		<div class="card-wrapper" role="document">
+			<button class="card-close" aria-label="Close">✕</button>
+			<div class="card">
+				<div class="card-left">
+					<img id="card-image" src="https://media.tenor.com/YE4d6BrNbGoAAAAj/boo-dudu-run.gif" alt="card image" />
+				</div>
+				<div class="card-right">
+					<div id="card-message" class="card-message"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="javascripts/script.js" type="module"></script>
 </body>
 
