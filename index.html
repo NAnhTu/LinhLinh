@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script> -->
+
+    <!-- SEO & Social Preview -->
+    <meta name="description"
+        content="Đếm ngày yêu — trang kỷ niệm và đếm ngày yêu thương giữa Tun & Bé Yêu. Mở để xem thông điệp và hiệu ứng đặc biệt.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://nanhtu.github.io/LinhLinh/">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Đếm ngày yêu — Tun & Bé Yêu">
+    <meta property="og:description"
+        content="Kỷ niệm những ngày yêu thương với hiệu ứng và nhạc nền dễ thương. Mở trang để xem và chia sẻ niềm vui.">
+    <meta property="og:url" content="https://nanhtu.github.io/LinhLinh/">
+    <meta property="og:site_name" content="Đếm ngày yêu">
+    <!-- Use an absolute URL for best compatibility with social platforms; replace with your real domain -->
+    <meta property="og:image" content="https://nanhtu.github.io/LinhLinh/assets/images/tuonggo.jpg">
+    <meta property="og:image:secure_url" content="https://nanhtu.github.io/LinhLinh/assets/images/tuonggo.jpg">
+    <meta property="og:image:alt" content="Tun & Bé Yêu">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Đếm ngày yêu — Tun & Bé Yêu">
+    <meta name="twitter:description" content="Kỷ niệm những ngày yêu thương với hiệu ứng và nhạc nền dễ thương.">
+    <meta name="twitter:image" content="https://nanhtu.github.io/LinhLinh/assets/images/tuonggo.jpg">
+
+    <!-- Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Đếm ngày yêu",
+            "description": "Trang kỷ niệm và đếm ngày yêu thương giữa Tun & Bé Yêu.",
+            "url": "https://nanhtu.github.io/LinhLinh/",
+            "inLanguage": "vi",
+            "image": [
+                "https://nanhtu.github.io/LinhLinh/assets/images/tuonggo.jpg"
+            ]
+        }
+        </script>
+        <!-- Favicons: place your favicon files in assets/icons/ (example files not included) -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+        <link rel="shortcut icon" href="assets/icons/favicon.ico">
 </head>
 
 <body onclick="playAudio()">
     <canvas id="c" width="948" height="586"></canvas>
-    
+
     <!-- Mute button always on top right -->
     <button id="mute-btn" class="mute-button" style="display: none;">🔊</button>
-    
+
     <div id="wrapper">
         <h1>Đếm ngày yêu</h1>
 
@@ -30,8 +77,7 @@
                 <b>Ngày rùi nè..</b>
             </div>
             <div class="two">
-                <img src="assets/images/tuntun.jpg"
-                    class="avt">
+                <img src="assets/images/tuntun.jpg" class="avt">
                 <p>Bé Yêu 🌸</p>
             </div>
         </div>

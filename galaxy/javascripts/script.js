@@ -967,7 +967,7 @@ let galaxyAudio = null;
 
 function preloadGalaxyAudio() {
   const audioSources = [
-    "https://stream.nct.vn/Believe_Audio217/MotDoi-14CasperBonNghiem-8776989.mp3",
+    "assets/audios/MotDoi.mp3",
   ];
 
   const randomIndex = Math.floor(Math.random() * audioSources.length);
