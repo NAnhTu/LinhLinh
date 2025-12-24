@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Merry Christmas</title>
+
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Loading Memories</div>
+    </div>
+
+    <div id="msg-box"></div>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-layer">
+        <h1>Merry Christmas</h1>
+
+        <div class="controls-wrapper">
+            <div class="btn-group">
+                <div class="control-btn" id="cam-btn">📷 Enable Gesture</div>
+            </div>
+            <div class="hint-text">Cloud Images Loaded Ready</div>
+        </div>
+
+        <div id="mode-bar">
+            <div class="mode-btn" onclick="setMode('TREE')" title="Tree Mode">🎄</div>
+            <div class="mode-btn" onclick="setMode('SCATTER')" title="Scatter Mode">✨</div>
+            <div class="mode-btn" onclick="setMode('FOCUS_RANDOM')" title="Focus Mode">🔍</div>
+            <div class="mode-btn" onclick="setMode('FOCUS_PRESENT')" title="Focus Present">🎁</div>
+            <div class="mode-btn" onclick="setMode('FOCUS_LETTER')" title="Focus Letter">💌</div>
+            <a href="./assets/images/christmasletter.jpg" class="mode-btn" target="_blank">🥰</a>
+        </div>
+    </div>
+
+    <div id="webcam-wrapper">
+        <video id="webcam" autoplay playsinline webkit-playsinline></video>
+    </div>
+    <div id="debug-info">Drag to rotate • Tap photo to view</div>
+
+    <script type="module" src="./javascripts/script.js"></script>
+</body>
+
+</html>
