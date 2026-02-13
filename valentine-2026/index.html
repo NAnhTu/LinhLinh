@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Happy Valentine’s Day 💕</title>
+
+  <!-- SEO basic -->
+  <meta name="description" content="Một món quà nhỏ: kéo từng tấm ảnh để dần dần lộ ra bức thư ở cuối cùng. 💌" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://your-domain.com/" />
+
+  <!-- Open Graph (Facebook, Zalo, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Happy Valentine’s Day 💕" />
+  <meta property="og:description" content="Kéo từng tấm ảnh để dần dần lộ ra bức thư ở cuối cùng. 💌" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://your-domain.com/images/Post.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Happy Valentine’s Day 💕" />
+  <meta name="twitter:description" content="Kéo từng tấm ảnh để dần dần lộ ra bức thư ở cuối cùng. 💌" />
+  <meta name="twitter:image" content="https://your-domain.com/images/Post.jpg" />
+
+  <meta name="theme-color" content="#ff4d6d" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Happy Valentine’s Day",
+    "description": "Kéo từng tấm ảnh để dần dần lộ ra bức thư ở cuối cùng.",
+    "url": "https://your-domain.com/"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./stylesheets/style.css" />
+</head>
+
+<body>
+  <!-- Nội dung text cho SEO/Accessibility (ẩn thị giác) -->
+  <h1 class="sr-only">Happy Valentine’s Day</h1>
+  <p class="sr-only">
+    Kéo từng tấm ảnh để dần dần lộ ra bức thư ở cuối cùng. Khi kéo hết ảnh, sẽ có mưa trái tim.
+  </p>
+
+  <main class="Container" aria-label="Valentine cards">
+    <!-- Bức thư / ảnh cuối cùng nằm dưới cùng -->
+    <section class="Picture-video" id="letter" aria-label="Bức thư">
+      <img
+        class="Picture-img-video"
+        src="./assets/images/post.png"
+        width="500"
+        height="350"
+        alt="Bức thư"
+        loading="eager"
+      />
+    </section>
+
+    <!-- Nơi JS tự render các ảnh chồng lên nhau -->
+    <section id="cards" aria-label="Các ảnh kỷ niệm"></section>
+  </main>
+
+  <noscript>
+    <div class="noscript">
+      Bạn cần bật JavaScript để kéo ảnh và xem hiệu ứng.
+    </div>
+  </noscript>
+
+  <script src="./javascripts/script.js" defer></script>
+
+  <script>
+    const MUSIC_URL = "./assets/audios/iloveu.mp3";
+    // Tự động phát nhạc khi người dùng tương tác (kéo ảnh)
+    function playMusicOnInteraction() {
+      const audio = new Audio(MUSIC_URL);
+      audio.loop = true;
+      audio.play().catch((error) => {
+        console.warn("Không thể tự động phát nhạc:", error);
+      });
+    }
+
+    // Thêm sự kiện tương tác để phát nhạc
+    document.addEventListener("pointerdown", playMusicOnInteraction, { once: true });
+  </script>
+</body>
+</html>

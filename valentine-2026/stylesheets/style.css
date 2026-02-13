@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+/* --------------------- */
+/* Base                  */
+/* --------------------- */
+* { box-sizing: border-box; }
+
+:root {
+  --card-size: 300px;
+  --note-height: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: "Caveat", serif;
+  overflow: hidden;
+
+  /* moved from inline style */
+  background-image: url("../assets/images/background-valentine.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+.noscript {
+  position: fixed;
+  inset: 16px auto auto 16px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.9);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* --------------------- */
+/* Layout                */
+/* --------------------- */
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* container cho cards (JS render vào đây) */
+#cards {
+  position: relative;
+}
+
+/* --------------------- */
+/* Card styles           */
+/* --------------------- */
+.Picture,
+.Picture-video {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: grab;
+  touch-action: none; /* quan trọng để kéo thả mượt trên mobile */
+}
+
+.Picture:active {
+  cursor: grabbing;
+}
+
+#letter {
+  z-index: 1; /* luôn nằm dưới */
+}
+
+/* images */
+.Picture-img {
+  display: block;
+  width: var(--card-size);
+  height: var(--card-size);
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.Picture-img-video {
+  display: block;
+  width: 500px;
+  height: 350px;
+  pointer-events: none;
+}
+
+/* notes */
+.Picture-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--card-size);
+  height: var(--note-height);
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .Picture,
+  .Picture-video {
+    transition: none !important;
+  }
+}
