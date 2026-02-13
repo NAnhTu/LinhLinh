@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const specialDates = [
     { month: 10, date: 25 }, // Birthday
     { month: 9, date: 17 }, // Birthday
+    { month: 2, date: 14 }, // Anniversary
     { month: 4, date: 13 }, // Anniversary
     { month: 10, date: 20 }, // Vietnam Women's Day
     { month: 3, date: 8 }, // International Women's Day
@@ -238,6 +239,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (isSpecialDate) {
     nextPage.style.display = "";
+  }
+  if (thisMonth === 2 && thisDate === 14) {
+    nextPage.href = "valentine-2026/index.html";
+    nextPageBtn.textContent = "Happy Valentine’s Day 💕";
   }
   if (thisMonth === 4 && thisDate === 13) {
     nextPage.href = "galaxy/index.html";
