@@ -118,8 +118,8 @@ function maybeClearCard(el) {
     if (clearedCount === pictures.length) {
       // Khi tất cả card đã được clear, làm thẻ image Picture-img-video to hơn 95% chiều rộng màn hình
       const videoCard = document.querySelector(".Picture-video .Picture-img-video");
-      videoCard.style.width = "90vw";
-      videoCard.style.height = "auto";
+      videoCard.style.width = "auto";
+      videoCard.style.height = "90vh";
       startRevealHearts();
     }
   }
