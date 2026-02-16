@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon64x64.png" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="../assets/css/countdown.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Lunar New Year 2026</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Lì xì tết nguyên đán 2026</title>
+    <meta name="title" content="Lì xì tết nguyên đán 2026" />
+    <meta name="description" content="Chúc mừng năm mới! 🧧🎉 Hãy tràn đầy niềm
+    vui, sức khỏe, và thịnh vượng trong năm Bính Ngọ 2026. Mong rằng bạn và gia đình
+    có một Tết Nguyên Đán ấm áp, hạnh phúc, và tràn đầy ý nghĩa. Chúc bạn luôn
+    thành công và may mắn trên con đường phía trước! 🌸" />
+    <meta
+      name="keywords"
+      content="lunar new year, 2026, tet 2026, Tet Holiday 2026, Tet Traditions, Tet 2026 Dates, Year of the Dragon, Vietnamese New Year 2026, Tet Celebrations, Tết nguyên đán 2026, Truyền thống tết, Năm Rồng, Năm mới"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="Vietnamese" />
+    <meta name="revisit-after" content="0.5 days" />
+    <meta name="author" content="Tun Tun" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lunar.miin.dev/nam-moi/" />
+    <meta property="og:title" content="Lì xì tết nguyên đán 2026" />
+    <meta
+      property="og:description"
+      content="Chúc mừng năm mới! 🧧🎉 Hãy tràn
+    đầy niềm vui, sức khỏe, và thịnh vượng trong năm Bính Ngọ 2026. Mong rằng bạn và
+    gia đình có một Tết Nguyên Đán ấm áp, hạnh phúc, và tràn đầy ý nghĩa. Chúc
+    bạn luôn thành công và may mắn trên con đường phía trước! 🌸"
+    />
+    <meta property="og:image" content="../assets/images/og.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lunar.miin.dev/nam-moi/" />
+    <meta property="twitter:title" content="Lì xì tết nguyên đán 2026" />
+    <meta
+      property="twitter:description"
+      content="Chúc mừng năm mới! 🧧🎉 Hãy
+    tràn đầy niềm vui, sức khỏe, và thịnh vượng trong năm Bính Ngọ 2026. Mong rằng
+    bạn và gia đình có một Tết Nguyên Đán ấm áp, hạnh phúc, và tràn đầy ý nghĩa.
+    Chúc bạn luôn thành công và may mắn trên con đường phía trước! 🌸"
+    />
+    <!-- <meta property="twitter:image" content="../assets/images/bg-nam-moi.png" /> -->
+    <meta name="twitter:image" content="../assets/images/og.png" />
+  </head>
+  <body
+    class="bg-[url('../assets/images/bg-countdown.png')] bg-cover bg-no-repeat bg-center relative"
+  >
+    <main
+      class="w-[100vw] h-[100vh] flex flex-col justify-center items-center scale-50 sm:scale-100 relative text-[#e7d783]"
+    >
+      <h1 id="" class="text-5xl text-white-tmp absolute top-[30%] hidden">
+        Đếm ngược đến tết nguyên đán
+      </h1>
+
+      <h2 id="tet" class=""></h2>
+
+      <h3 id="thisNewYear"></h3>
+
+      <div class="flex gap-5 text-white-tmp items-center translate-y-[-30px]">
+        <div class="clock">
+          <div id="days" class="text-9xl text-white-tmp">00</div>
+          <div id="" class="text-center text-xl">Ngày</div>
+        </div>
+        <div class="translate-y-[-10px]">:</div>
+        <div class="clock">
+          <div id="hours" class="text-9xl text-white-tmp">00</div>
+          <div id="h" class="text-center text-xl">Giờ</div>
+        </div>
+
+        <div class="translate-y-[-10px]">:</div>
+        <div class="clock">
+          <div id="mins" class="text-9xl text-white-tmp">00</div>
+          <div id="" class="text-center text-xl">Phút</div>
+        </div>
+
+        <div class="translate-y-[-10px]">:</div>
+        <div class="clock">
+          <div id="secs" class="text-9xl text-white-tmp">00</div>
+          <div id="" class="text-center text-xl">Giây</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="absolute bottom-0 left-0 right-0 w-full flex justify-between items-center p-5">
+      <button id="toggle-audio" class="text-gray-400 bg-transparent">
+        <i class="fas fa-volume-mute"></i>
+      </button>
+      <a class="text-gray-400 bg-transparent" href="/LinhLinh/lunar-new-year/phao-hoa/index.html">
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/duration.js"></script>
+    <script>dayjs.locale('vi-vn')</script>
+    <script src="../assets/js/countdown.js"></script>
+  </body>
+</html>

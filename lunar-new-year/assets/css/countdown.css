@@ -1,0 +1,11 @@
+body {
+    font-size: 1.6em;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Dancing Script', Helvetica, Arial, sans-serif;
+    background-size: cover;
+}
+
+.btn {
+    color: gray
+}

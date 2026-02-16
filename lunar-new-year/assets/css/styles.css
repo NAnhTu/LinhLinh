@@ -1,0 +1,35 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --back: #cb3541;
+  --front-bottom: #ba3243;
+  --front-left-right: #cb3541;
+  --top: #fa5347;
+}
+
+@font-face {
+  font-family: 'Tet';
+  src: url('../fonts/tet.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ThuPhap';
+  src: url('../fonts/thuphap.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tet-font {
+  font-family: 'Tet', sans-serif;
+}
+
+.thu-phap-font {
+  font-family: 'ThuPhap', sans-serif;
+}
