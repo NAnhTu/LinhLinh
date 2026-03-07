@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Women's Day</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet"> -->
+   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --peony-blush: #E6D7F0;
+      --deep-rose: #B19CD9;
+      --sage-green: #A8C3A6;
+      --creamy-vanilla: #FDFBF7;
+      --soft-charcoal: #4A4A4A;
+      --paper-shadow: rgba(177, 156, 217, 0.15);
+      --hand-drawn-border: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--creamy-vanilla);
+      background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      color: var(--soft-charcoal);
+    }
+
+    /* ─── Floral Decorations ─── */
+    .corner-flower {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      width: clamp(150px, 25vw, 280px);
+      height: auto;
+      transition: transform 3s ease-in-out;
+    }
+
+    .corner-flower img { 
+      width: 100%; 
+      height: auto; 
+      mix-blend-mode: multiply; /* Fix: Remove white background */
+    }
+
+    /* Fix: Corner Flower Rotations */
+    .top-left { top: -20px; left: -20px; transform: scaleX(-1); }
+    .top-right { top: -20px; right: -20px; }
+    .bottom-left { bottom: -20px; left: -20px; transform: scale(-1, -1); }
+    .bottom-right { bottom: -20px; right: -20px; transform: scaleY(-1); }
+
+    /* ─── Header ─── */
+    .header {
+      position: absolute;
+      top: 40px;
+      text-align: center;
+      z-index: 10;
+      width: 100%;
+    }
+
+    .header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      color: var(--deep-rose);
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInDown 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes fadeInDown {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Main Container ─── */
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* ─── Envelope State ─── */
+    .envelope-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .envelope-wrapper.hidden {
+      opacity: 0;
+      transform: scale(0.4) translateY(100px);
+      pointer-events: none;
+    }
+
+    .envelope-img {
+      width: clamp(280px, 70vw, 480px);
+      filter: drop-shadow(0 15px 35px var(--paper-shadow));
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      mix-blend-mode: multiply; /* Fix: Remove white background */
+    }
+
+    .envelope-img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .tap-btn {
+      margin-top: 40px;
+      padding: 16px 40px;
+      background: white;
+      color: var(--deep-rose);
+      border: 2px solid var(--peony-blush);
+      border-radius: var(--hand-drawn-border);
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 20px var(--paper-shadow);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: pulse 2s infinite;
+    }
+
+    .tap-btn:hover {
+      background: var(--peony-blush);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 8px 20px var(--paper-shadow); }
+      50% { transform: scale(1.05); box-shadow: 0 12px 25px rgba(212, 122, 154, 0.3); }
+      100% { transform: scale(1); box-shadow: 0 8px 20px var(--paper-shadow); }
+    }
+
+    /* ─── Open Card State ─── */
+    .card-wrapper {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.7) translateY(50px);
+      pointer-events: none;
+      transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: clamp(320px, 90vw, 900px);
+    }
+
+    .card-wrapper.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .open-card {
+      display: flex;
+      background: var(--creamy-vanilla); /* Fix: Use soft cream for whole card */
+      border-radius: 15px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+      border: 1px solid rgba(212, 122, 154, 0.1);
+      min-height: 500px;
+    }
+
+    .card-left {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px dashed var(--peony-blush);
+    }
+
+    .card-left img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      mix-blend-mode: multiply; /* Fix: Remove white background */
+      filter: drop-shadow(0 10px 20px var(--paper-shadow));
+      animation: slowSway 10s ease-in-out infinite;
+    }
+
+    @keyframes slowSway {
+      0%, 100% { transform: rotate(-2deg) scale(1); }
+      50% { transform: rotate(2deg) scale(1.02); }
+    }
+
+    .card-right {
+      flex: 1.2;
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .card-right::after {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px; right: 20px; bottom: 20px;
+      border: 2px solid var(--peony-blush);
+      border-radius: var(--hand-drawn-border);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .card-right h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--deep-rose);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .message {
+      font-family: "Patrick Hand", cursive;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--soft-charcoal);
+      text-align: center;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: var(--deep-rose);
+      text-align: right;
+      margin-top: 30px;
+      padding-right: 20px;
+    }
+
+    .petal {
+      position: fixed;
+      pointer-events: none;
+      z-index: 20;
+      background: var(--peony-blush);
+      border-radius: 150% 0 150% 0;
+      opacity: 0.8;
+      top: -10px;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      100% { transform: translateY(110vh) translateX(100px) rotate(720deg); opacity: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .open-card { flex-direction: column; }
+      .card-left { padding: 30px; border-right: none; border-bottom: 1px dashed var(--peony-blush); }
+      .card-right { padding: 40px 30px; }
+      .header { top: 20px; }
+      .header h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="corner-flower top-left"><img src="assets/images/corner flowers.png"></div>
+  <div class="corner-flower top-right"><img src="assets/images/corner flowers.png"></div>
+  <div class="corner-flower bottom-left"><img src="assets/images/corner flowers.png"></div>
+  <div class="corner-flower bottom-right"><img src="assets/images/corner flowers.png"></div>
+
+  <div class="header">
+    <h1 id="headerText">Happy Women's Day</h1>
+  </div>
+
+  <div class="stage">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <img src="assets/images/closed card.png" class="envelope-img" id="envelopeImg" alt="Closed Envelope">
+      <button class="tap-btn" id="openBtn">
+         Thư gửi Em Bé Yêu<span>🌸</span>
+      </button>
+    </div>
+
+    <div class="card-wrapper" id="cardWrapper">
+      <div class="open-card">
+        <div class="card-left">
+          <img src="assets/images/lavender with transparent background.png" alt="Flowers">
+        </div>
+        <div class="card-right">
+          <h2 id="cardTitle">Happy Women's Day!</h2>
+          <div class="message" id="cardMessage"></div>
+          <div class="signature" id="cardSignature"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="loveAudio" src="assets/audios/I Love You.mp3"></audio>
+
+  <script>
+    const CONFIG = {
+      headerText: "Gửi Em Bé Yêu 🌸",
+      cardTitle: "Happy Women's Day! 💖",
+      message: [
+        "Tun Tun chúc Em Bé có một ngày 8/3 thật vui vẻ và hạnh phúc! 🌷",
+        "Chúc Em Bé nhà mình luôn xinh đẹp ạaaaa",
+        "Chúc Em Bé công việc thuận lợi và luôn gặp nhiều điều may mắn ạ",
+        "Mong sao tất cả những điều tốt đẹp nhất sẽ đều dành cho Em Bé, để Em Bé luôn vui vẻ, luôn cười nhiều hơn, hông phải lo nghĩ gì ạaaa",
+        "",
+        "Tun Tun luôn ở đây đồng hành, yêu thương Em Bé lắm ạaaa",
+      ],
+      signature: "Tun Tun yêu Em Bé Yêu 🌸 nhà mình lắm ạ<br>From Tun Tun with love",
+      petalColors: ['#E6D7F0', '#D8BFD8', '#DCC9E0', '#C8A2C8', '#B19CD9']
+    };
+
+    document.getElementById('headerText').textContent = CONFIG.headerText;
+    document.getElementById('cardTitle').innerHTML = CONFIG.cardTitle;
+    document.getElementById('cardMessage').innerHTML = CONFIG.message.join('<br>');
+    document.getElementById('cardSignature').innerHTML = CONFIG.signature;
+
+    const openBtn = document.getElementById('openBtn');
+    const envelopeImg = document.getElementById('envelopeImg');
+    const envelopeWrapper = document.getElementById('envelopeWrapper');
+    const cardWrapper = document.getElementById('cardWrapper');
+
+    function openCard() {
+      envelopeWrapper.classList.add('hidden');
+      setTimeout(() => {
+        cardWrapper.classList.add('visible');
+        startPetals();
+        playMusic();
+      }, 600);
+    }
+
+    function playMusic() {
+      const audio = document.getElementById('loveAudio');
+      audio.currentTime = 39;
+      audio.play();
+    }
+
+    openBtn.addEventListener('click', openCard);
+    envelopeImg.addEventListener('click', openCard);
+
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      const size = Math.random() * 15 + 10;
+      const left = Math.random() * 100;
+      const duration = Math.random() * 5 + 5;
+      const delay = Math.random() * 5;
+      const color = CONFIG.petalColors[Math.floor(Math.random() * CONFIG.petalColors.length)];
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+      petal.style.left = `${left}vw`;
+      petal.style.top = '0';
+      petal.style.background = color;
+      petal.style.animation = `fall ${duration}s linear ${delay}s infinite`;
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), (duration + delay) * 1000);
+    }
+
+    function startPetals() {
+      for(let i = 0; i < 30; i++) createPetal();
+      setInterval(createPetal, 400);
+    }
+  </script>
+</body>
+</html>

@@ -248,6 +248,10 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.href = "lunar-new-year/count-down/index.html";
     nextPageBtn.textContent = "Đếm ngược Tết Nguyên Đán 2026 🧧🎉";
   }
+  if (thisMonth === 3 && thisDate === 8) {
+    nextPage.href = "international-women-day/index.html";
+    nextPageBtn.textContent = "Happy International Women’s Day 🌸";
+  }
   if (thisMonth === 4 && thisDate === 13) {
     nextPage.href = "galaxy/index.html";
     nextPageBtn.textContent = "Happy Anniversary 🌌";
