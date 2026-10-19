@@ -220,6 +220,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextPageBtn = document.querySelector("#next-page button");
   const thisMonth = today.getMonth() + 1;
   const thisDate = today.getDate();
+  const thisYear = today.getFullYear();
+
   const specialDates = [
     { month: 10, date: 25 }, // Birthday
     { month: 9, date: 17 }, // Birthday
@@ -268,8 +270,8 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.href = "mid-autumn-festival/index.html";
     nextPageBtn.textContent = "Trung Thu ròiiii 🌕";
   }
-  if (thisMonth === 10 && thisDate === 20) {
-    nextPage.href = "women-day/index.html";
+  if (thisMonth === 10 && thisDate === 20 && thisYear === 2025) {
+    nextPage.href = "women-day-2025/index.html";
     nextPageBtn.textContent = "Ngày Em Bé Yêu 🌸";
   }
   if (thisMonth === 12 && thisDate === 25) {
