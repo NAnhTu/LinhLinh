@@ -274,6 +274,10 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPage.href = "women-day-2025/index.html";
     nextPageBtn.textContent = "Ngày Em Bé Yêu 🌸";
   }
+  if (thisMonth === 10 && thisDate === 20 && thisYear === 2026) {
+    nextPage.href = "women-day-2026/index.html";
+    nextPageBtn.textContent = "Ngày Em Bé Yêu 🌸";
+  }
   if (thisMonth === 12 && thisDate === 25) {
     nextPage.href = "merry-christmas/index.html";
     nextPageBtn.textContent = "Merry Christmas 🎄";
