@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { month: 3, date: 8 }, // International Women's Day
     { month: 9, date: 24 }, // today
     { month: 10, date: 6 }, // today
+    { month: 10, date: 24 }, // today
   ];
   const isSpecialDate = specialDates.some(
     (d) => d.month === thisMonth && d.date === thisDate
@@ -260,6 +261,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (thisMonth === 9 && thisDate === 17) {
     nextPage.href = "birthday-cake/index.html";
+    nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
+  }
+  if (thisMonth === 10 && thisDate === 24 && thisYear === 2026) {
+    nextPage.href = "birthday-2026/index.html";
     nextPageBtn.textContent = "Happy Birthday Bé Yêu 🌸";
   }
   if (thisMonth === 10 && thisDate === 25) {
